@@ -17,14 +17,14 @@ public class UserDetailsImpl implements UserDetails {
     private static final long serialVersionId = 1L;
 
     private Long id;
-    private String userName;
+    private String username;
     private String email;
     private String password;
     private Collection<? extends GrantedAuthority> authorities;
 
-    public UserDetailsImpl(Long id, String userName, String email, String password, Collection<? extends GrantedAuthority> authorities) {
+    public UserDetailsImpl(Long id, String username, String email, String password, Collection<? extends GrantedAuthority> authorities) {
         this.id = id;
-        this.userName = userName;
+        this.username = username;
         this.email = email;
         this.password = password;
         this.authorities = authorities;
@@ -34,7 +34,7 @@ public class UserDetailsImpl implements UserDetails {
         GrantedAuthority authority = new SimpleGrantedAuthority(user.getRole());
         return new UserDetailsImpl(
               user.getId(),
-              user.getUserName(),
+              user.getUsername(),
               user.getEmail(),
               user.getPassword(),
                 Collections.singletonList(authority)
@@ -43,16 +43,16 @@ public class UserDetailsImpl implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return List.of();
+        return authorities;
     }
 
     @Override
     public String getPassword() {
-        return "";
+        return password;
     }
 
     @Override
     public String getUsername() {
-        return "";
+        return username;
     }
 }
