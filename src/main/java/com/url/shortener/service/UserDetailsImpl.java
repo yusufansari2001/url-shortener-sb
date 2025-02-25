@@ -1,4 +1,4 @@
-package com.url.shortener.services;
+package com.url.shortener.service;
 
 import com.url.shortener.models.User;
 import lombok.Data;
@@ -9,7 +9,6 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
 import java.util.Collections;
-import java.util.List;
 
 @Data
 @NoArgsConstructor

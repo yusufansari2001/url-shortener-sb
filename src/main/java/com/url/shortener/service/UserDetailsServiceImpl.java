@@ -1,4 +1,4 @@
-package com.url.shortener.services;
+package com.url.shortener.service;
 
 
 

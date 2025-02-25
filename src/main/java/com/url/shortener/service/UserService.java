@@ -1,6 +1,6 @@
-package com.url.shortener.services;
+package com.url.shortener.service;
 
-import com.url.shortener.dto.LoginRequest;
+import com.url.shortener.dtos.LoginRequest;
 import com.url.shortener.jwt.JwtAuthenticationResponse;
 import com.url.shortener.jwt.JwtUtils;
 import com.url.shortener.models.User;

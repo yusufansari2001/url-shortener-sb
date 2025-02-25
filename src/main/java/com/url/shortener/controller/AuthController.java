@@ -1,10 +1,10 @@
 package com.url.shortener.controller;
 
-import com.url.shortener.dto.LoginRequest;
-import com.url.shortener.dto.RegisterRequest;
+import com.url.shortener.dtos.LoginRequest;
+import com.url.shortener.dtos.RegisterRequest;
 import com.url.shortener.jwt.JwtAuthenticationResponse;
 import com.url.shortener.models.User;
-import com.url.shortener.services.UserService;
+import com.url.shortener.service.UserService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
