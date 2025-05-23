@@ -1,4 +1,4 @@
-package com.url.shortener.jwt;
+package com.url.shortener.security.jwt;
 
 import com.url.shortener.service.UserDetailsImpl;
 import io.jsonwebtoken.JwtException;
@@ -20,7 +20,7 @@ public class JwtUtils {
     @Value("${jwt.secret}")
     private String jwtSecret;
 
-    @Value("${jwt.jwtExpiration}")
+    @Value("${jwt.expiration}")
     private int jwtExpirationMs;
 
     // Authorization -> Bearer <TOKEN>
@@ -46,7 +46,7 @@ public class JwtUtils {
                 .compact();
     }
 
-    public String getUsernameFromJwtToken(String token) {
+    public String getUserNameFromJwtToken(String token) {
         return Jwts.parser()
                 .verifyWith((SecretKey) key())
                 .build().parseSignedClaims(token)

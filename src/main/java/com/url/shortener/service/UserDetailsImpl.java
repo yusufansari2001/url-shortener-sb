@@ -13,12 +13,14 @@ import java.util.Collections;
 @Data
 @NoArgsConstructor
 public class UserDetailsImpl implements UserDetails {
-    private static final long serialVersionId = 1L;
+    private static final long serialVersionUID = 1L;
 
     private Long id;
     private String username;
     private String email;
+
     private String password;
+
     private Collection<? extends GrantedAuthority> authorities;
 
     public UserDetailsImpl(Long id, String username, String email, String password, Collection<? extends GrantedAuthority> authorities) {
@@ -32,10 +34,10 @@ public class UserDetailsImpl implements UserDetails {
     public static UserDetailsImpl build(User user) {
         GrantedAuthority authority = new SimpleGrantedAuthority(user.getRole());
         return new UserDetailsImpl(
-              user.getId(),
-              user.getUsername(),
-              user.getEmail(),
-              user.getPassword(),
+                user.getId(),
+                user.getUsername(),
+                user.getEmail(),
+                user.getPassword(),
                 Collections.singletonList(authority)
         );
     }

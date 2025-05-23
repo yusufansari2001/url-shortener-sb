@@ -1,8 +1,8 @@
 package com.url.shortener.service;
 
 import com.url.shortener.dtos.LoginRequest;
-import com.url.shortener.jwt.JwtAuthenticationResponse;
-import com.url.shortener.jwt.JwtUtils;
+import com.url.shortener.security.jwt.JwtAuthenticationResponse;
+import com.url.shortener.security.jwt.JwtUtils;
 import com.url.shortener.models.User;
 import com.url.shortener.repository.UserRepository;
 import lombok.AllArgsConstructor;

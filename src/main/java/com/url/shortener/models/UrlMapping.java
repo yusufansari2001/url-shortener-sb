@@ -14,13 +14,13 @@ public class UrlMapping {
     private Long id;
     private String originalUrl;
     private String shortUrl;
+    private int clickCount = 0;
     private LocalDateTime createdDate;
-    private int clickCount;
 
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
 
     @OneToMany(mappedBy = "urlMapping")
-    List<ClickEvent> clickEvents;
+    private List<ClickEvent> clickEvents;
 }
